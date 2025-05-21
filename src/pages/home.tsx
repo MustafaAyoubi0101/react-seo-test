@@ -3,7 +3,7 @@ import QuickiePost from '../components/quickiePost';
 import DevWelcomeCard from '../components/devWelcomeCard';
 import Article from '../components/article';
 import ActiveDiscussions from '../components/activeDiscussions';
-import { BlogPost, BlogPostsResponse } from '../models/blogpost';
+import { BlogPostsResponse } from '../models/blogpost';
 import { useEffect, useState } from 'react';
 
 export default function HomePage() {

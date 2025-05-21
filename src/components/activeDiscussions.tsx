@@ -13,7 +13,7 @@ const discussions = [
 
 export default function ActiveDiscussions() {
 	return (
-		<aside className="max-w-sm max-h-fit bg-white border-l shadow-md rounded-lg p-4 hidden lg:block">
+		<aside className="max-w-sm max-h-fit bg-white shadow-md rounded-lg p-4 hidden lg:block">
 			<h2 className="text-lg font-semibold mb-4">Active discussions</h2>
 			<hr />
 			<ul className="space-y-4">
