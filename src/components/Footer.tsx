@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="p-5 text-center border-t text-sm space-y-1 text-gray-500">
+    <footer className="p-5 text-center text-sm space-y-1 text-gray-500">
       <div className="flex justify-center divide-x">
         <Link to="/privacy" className="px-3">
           Privacy Policy

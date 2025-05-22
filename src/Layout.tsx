@@ -6,7 +6,7 @@ export default function Layout({ children }) {
 		<>
 			<Header />
 			<div className="bg-[#f5f3ff]">
-				<main className="min-h-screen p-5 container mx-auto">
+				<main className="p-5 container mx-auto">
 					{children}
 				</main>
 			</div>
