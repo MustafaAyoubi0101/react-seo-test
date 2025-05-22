@@ -4,7 +4,7 @@ import DevWelcomeCard from '../components/devWelcomeCard';
 import Article from '../components/article';
 import ActiveDiscussions from '../components/activeDiscussions';
 import { BlogPostsResponse } from '../models/blogpost';
-import { Profiler, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function HomePage() {
 	const [posts, setPosts] = useState([]);
@@ -14,18 +14,17 @@ export default function HomePage() {
 		meta.name = 'description';
 		meta.content = 'Come and read my articles!';
 		document.head.appendChild(meta);
+		const metanew = document.createElement('meta');
+		metanew.name = 'robots';
+		metanew.content = 'noindex, nofollow';  // ← این تگ به گوگل می‌گه ایندکس نکن
+		document.head.appendChild(metanew);
 		fetchPosts();
 	}, [])
-
-	function onRender(id, phase, actualDuration, baseDuration, startTime, commitTime) {
-		// Aggregate or log render timings...
-		console.log(phase, actualDuration, baseDuration)
-	}
 
 	const fetchPosts = async () => {
 		const response = await fetch("https://dummyjson.com/posts");
 		const { posts }: BlogPostsResponse = await response.json();
-		setPosts(posts as []);
+		setPosts(posts as any);
 	}
 
 	return (
@@ -35,11 +34,9 @@ export default function HomePage() {
 					<Sidebar />
 				</aside>
 				<div className="flex-1 p-1 max-w-3xl mx-3">
-					<Profiler id='QuickiePost' onRender={onRender}>
-						<QuickiePost />
-					</Profiler>
+					<QuickiePost />
 					<DevWelcomeCard />
-					{posts.map(({ id, title, tags, views }, i) => (
+					{posts?.map(({ id, title, tags, views }, i) => (
 						<Article key={i} id={id} title={title} tags={tags} views={views} body="" />
 					))}
 				</div>

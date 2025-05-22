@@ -14,9 +14,9 @@ export default function Article({ id, title, tags, views }: BlogPost) {
                 </div>
             </div>
             <Link to={`/posts/${id}`} >
-                <h2 className="text-2xl font-bold mb-3 ml-14 mt-6 transition-all hover:text-blue-900">
+                <h1 className="text-2xl font-bold mb-3 ml-14 mt-6 transition-all hover:text-blue-900">
                     {title}
-                </h2>
+                </h1>
             </Link>
             <div className="flex space-x-2 text-sm ml-12">
                 {tags.map((tag, index) => (
