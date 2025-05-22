@@ -4,14 +4,23 @@ import DevWelcomeCard from '../components/devWelcomeCard';
 import Article from '../components/article';
 import ActiveDiscussions from '../components/activeDiscussions';
 import { BlogPostsResponse } from '../models/blogpost';
-import { useEffect, useState } from 'react';
+import { Profiler, useEffect, useState } from 'react';
 
 export default function HomePage() {
 	const [posts, setPosts] = useState([]);
 
 	useEffect(() => {
+		const meta = document.createElement('meta');
+		meta.name = 'description';
+		meta.content = 'Come and read my articles!';
+		document.head.appendChild(meta);
 		fetchPosts();
 	}, [])
+
+	function onRender(id, phase, actualDuration, baseDuration, startTime, commitTime) {
+		// Aggregate or log render timings...
+		console.log(phase, actualDuration, baseDuration)
+	}
 
 	const fetchPosts = async () => {
 		const response = await fetch("https://dummyjson.com/posts");
@@ -26,7 +35,9 @@ export default function HomePage() {
 					<Sidebar />
 				</aside>
 				<div className="flex-1 p-1 max-w-3xl mx-3">
-					<QuickiePost />
+					<Profiler id='QuickiePost' onRender={onRender}>
+						<QuickiePost />
+					</Profiler>
 					<DevWelcomeCard />
 					{posts.map(({ id, title, tags, views }, i) => (
 						<Article key={i} id={id} title={title} tags={tags} views={views} body="" />
