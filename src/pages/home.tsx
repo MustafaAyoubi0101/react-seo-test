@@ -14,11 +14,21 @@ export default function HomePage() {
 		meta.name = 'description';
 		meta.content = 'Come and read my articles!';
 		document.head.appendChild(meta);
-		const metanew = document.createElement('meta');
-		metanew.name = 'robots';
-		metanew.content = 'noindex, nofollow';  // ← این تگ به گوگل می‌گه ایندکس نکن
-		document.head.appendChild(metanew);
 		fetchPosts();
+
+		const script = document.createElement('script');
+		script.type = 'application/ld+json';
+		script.innerHTML = JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "BlogPosting",
+			"headline": "Welcome to DevScope",
+			"author": {
+				"@type": "Person",
+				"name": "John Developer"
+			},
+			"datePublished": "2024-12-01"
+		});
+		document.head.appendChild(script);
 	}, [])
 
 	const fetchPosts = async () => {

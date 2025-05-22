@@ -22,7 +22,7 @@ export default function AboutPage() {
       </p>
       <img
         src={aboutLogo}
-        alt="Profile"
+        // alt="Profile"
         width={800}
         height={200}
         className="rounded-md"
