@@ -14,6 +14,9 @@ export default function HomePage() {
 		meta.name = 'description';
 		meta.content = 'Come and read my articles!';
 		document.head.appendChild(meta);
+		const title = document.createElement('title');
+		title.textContent = 'Welcome to DevScope';
+		document.head.appendChild(title);
 		fetchPosts();
 
 		const script = document.createElement('script');
