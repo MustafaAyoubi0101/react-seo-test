@@ -15,9 +15,11 @@ export default function BlogPostPage() {
 
 	const fetchPost = async () => {
 		const response = await fetch(`https://dummyjson.com/posts/${params.id}`);
-		const { posts }: BlogPostsResponse = await response.json();
+		response.json().then((p) => {
+			console.log(p)
+			setNewPost(p)
+		})
 		await delay(1000);
-		setNewPost(posts);
 	}
 
 	return (
