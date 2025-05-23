@@ -10,28 +10,7 @@ export default function HomePage() {
 	const [posts, setPosts] = useState([]);
 
 	useEffect(() => {
-		const meta = document.createElement('meta');
-		meta.name = 'description';
-		meta.content = 'Come and read my articles!';
-		document.head.appendChild(meta);
-		const title = document.createElement('title');
-		title.textContent = 'Welcome to DevScope';
-		document.head.appendChild(title);
 		fetchPosts();
-
-		const script = document.createElement('script');
-		script.type = 'application/ld+json';
-		script.innerHTML = JSON.stringify({
-			"@context": "https://schema.org",
-			"@type": "BlogPosting",
-			"headline": "Welcome to DevScope",
-			"author": {
-				"@type": "Person",
-				"name": "John Developer"
-			},
-			"datePublished": "2024-12-01"
-		});
-		document.head.appendChild(script);
 	}, [])
 
 	const fetchPosts = async () => {
