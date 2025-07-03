@@ -25,7 +25,7 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({ headerTitle, headerEmoji,
     <div className="rounded-lg mb-4 overflow-hidden">
       <div className="flex items-center gap-2 px-3 py-2 bg-gray-50 text-sm font-semibold">
         <span>Happening Now</span>
-        <span>"🌟"</span>
+        <span>🌟</span>
       </div>
       <img src='./src/assets/robot-looking-files.jpg' alt="Challenge" width='100' height='100' className="w-full h-28 object-cover" />
       <div className="p-3">
