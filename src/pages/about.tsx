@@ -20,7 +20,7 @@ export default function AboutPage() {
         words!
       </p>
       <img
-        src='./src/assets/technology-communication-icons-symbols-concept.jpg'
+        src='./technology-communication-icons-symbols-concept.jpg'
         // alt="Profile"
         width={800}
         height={200}

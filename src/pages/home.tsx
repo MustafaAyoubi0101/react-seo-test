@@ -42,7 +42,7 @@ export default function HomePage() {
 							{
 								sectionTitle: "Happening Now",
 								sectionEmoji: "🌟",
-								image: { src: './src/assets/robot-looking-files.jpg', width: 100, height: 100 },
+								image: { src: './robot-looking-files.jpg', width: 100, height: 100 },
 								link: {
 									href: "#",
 									text: 'Runner H "AI Agent Prompting" Challenge',
@@ -52,7 +52,7 @@ export default function HomePage() {
 							{
 								sectionTitle: "Just Announced",
 								sectionEmoji: "⚡",
-								image: { src: './src/assets/success.jpg', width: 100, height: 100 },
+								image: { src: './success.jpg', width: 100, height: 100 },
 								link: {
 									href: "#",
 									text: "World's Largest Hackathon Writing Challenge",
