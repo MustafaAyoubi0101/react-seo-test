@@ -1,8 +1,8 @@
+import React from "react";
 import { ArrowLeft } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import { delay } from "../lib/utils";
 import { useEffect, useState } from "react";
-import { BlogPostsResponse } from "../models/blogpost";
 
 
 export default function BlogPostPage() {

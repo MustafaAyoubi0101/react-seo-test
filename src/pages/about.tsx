@@ -1,5 +1,4 @@
-import aboutLogo from '../assets/technology-communication-icons-symbols-concept.jpg';
-
+import React from "react";
 
 export default function AboutPage() {
   return (
@@ -21,7 +20,7 @@ export default function AboutPage() {
         words!
       </p>
       <img
-        src={aboutLogo}
+        src='./src/assets/technology-communication-icons-symbols-concept.jpg'
         // alt="Profile"
         width={800}
         height={200}

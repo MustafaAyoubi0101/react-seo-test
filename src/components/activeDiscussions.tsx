@@ -1,4 +1,4 @@
-// components/ActiveDiscussions.jsx
+import React from "react";
 
 const discussions = [
 	{ title: "Meme Monday", comments: 75 },

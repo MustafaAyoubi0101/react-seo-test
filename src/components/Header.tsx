@@ -1,7 +1,7 @@
+import React from 'react';
 import { useState } from 'react';
 import {Link} from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import blogLogo from '../assets/blog-logo.png';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,7 +11,7 @@ export default function Header() {
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
 
         <Link to="/" className="flex items-center gap-2">
-          <img src={blogLogo} alt="blog" width={70} height={40} className="rounded-md" />
+          <img src='./src/assets/blog-logo.png' alt="blog" width={70} height={40} className="rounded-md" />
           <span className="text-xl font-bold">DevScope</span>
         </Link>
 

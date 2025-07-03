@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 import { BookOpen, FileQuestion, Library, MessageSquare, Phone, Podcast, Video } from "lucide-react";
 
 type NavItem = {
