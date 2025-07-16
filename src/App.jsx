@@ -12,6 +12,13 @@ const PrivacyPolicy = lazy(() => import('./pages/privacy'))
 
 function App() {
 
+  useEffect(() => {
+    const CreatedMetaDesctipt = document.createElement("meta");
+    CreatedMetaDesctipt.setAttribute("name", "description");
+    CreatedMetaDesctipt.setAttribute("content", "Come and read my articles!");
+    document.head.appendChild(CreatedMetaDesctipt);
+  }, [])
+
   return (
     <>
       <BrowserRouter>
