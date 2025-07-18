@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
 import HomePage from "./pages/home";
@@ -13,10 +13,10 @@ const PrivacyPolicy = lazy(() => import('./pages/privacy'))
 function App() {
 
   useEffect(() => {
-    const CreatedMetaDesctipt = document.createElement("meta");
-    CreatedMetaDesctipt.setAttribute("name", "description");
-    CreatedMetaDesctipt.setAttribute("content", "Come and read my articles!");
-    document.head.appendChild(CreatedMetaDesctipt);
+    // const CreatedMetaDesctipt = document.createElement("meta");
+    // CreatedMetaDesctipt.setAttribute("name", "description");
+    // CreatedMetaDesctipt.setAttribute("content", "Come and read my articles!");
+    // document.head.appendChild(CreatedMetaDesctipt);
   }, [])
 
   return (

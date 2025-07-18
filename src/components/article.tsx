@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BlogPost } from "../models/blogpost";
 import { Link } from 'react-router-dom';
 
 export default function Article({ id, title, tags, views }: BlogPost) {
+
+    useEffect(() => {
+        const CreatedMetaDesctipt = document.createElement("meta");
+        CreatedMetaDesctipt.setAttribute("name", "description");
+        CreatedMetaDesctipt.setAttribute("content", `Come and read my ${title}`);
+        document.head.appendChild(CreatedMetaDesctipt);
+    }, [])
+
     return (
         <article className="max-w-4xl mx-auto bg-white mt-3 p-6 rounded-lg shadow-sm hover:shadow-xl transition-shadow duration-300">
             <div className="flex items-center mb-2">

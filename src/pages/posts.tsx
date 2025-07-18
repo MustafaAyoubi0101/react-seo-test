@@ -8,6 +8,13 @@ export default function PostPage() {
 	const [posts, setPosts] = useState([]);
 
 	useEffect(() => {
+		const CreatedMetaDesctipt = document.createElement("meta");
+		CreatedMetaDesctipt.setAttribute("name", "description");
+		CreatedMetaDesctipt.setAttribute("content", "Come and read my articles!");
+		document.head.appendChild(CreatedMetaDesctipt);
+	}, [])
+
+	useEffect(() => {
 		fetchPosts();
 	}, [])
 
